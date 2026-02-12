@@ -1,0 +1,239 @@
+types:
+  - name: "Explanations of Topics"
+    patterns:
+      - title: "Somebody About Something"
+        description: "Most of the videos have this format: some guy tells about something"
+        examples: []
+      
+      - title: "Iceberg Explained"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=pEfrdAtAmqk"
+            name: "God-Tier Developer Roadmap"
+      
+      - title: "Every Concept Explained"
+        description: null
+        examples: []
+      
+      - title: "If Something Were Like Something Else"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=G025oxyWv0E"
+            name: "If Educational Videos Were Filmed Like Music Videos"
+      
+      - title: "Levels of Something"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=I0vDXO5FeaI"
+            name: "The 7 Levels of Math Symbols"
+      
+      - title: "Explained Visually or Visualized"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=eiC58R16hb8"
+            name: "JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue"
+      
+      - title: "Every Type Explained in N Minutes"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=FOcmIPA4zwc"
+            name: "Every Type of Alcohol Explained in 5 Minutes"
+          - url: "https://www.youtube.com/watch?v=9t2TQ8-mf5w"
+            name: "Every Level of Wealth in 13 Minutes"
+      
+      - title: "Mistakes That People Make"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=nP8A1l_qYbU"
+            name: "10 BASIC Mistakes That Beginners Make"
+          - url: "https://www.youtube.com/watch?v=Ul0HbyljlPo"
+            name: "12 Mistakes Every Beginner Guitar Player Makes"
+          - url: "https://www.youtube.com/watch?v=7czaBml3SeI"
+            name: "5 Common Mistakes BEGINNERS Make in Chess"
+      
+      - title: "Every Type Explained in N of Something"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=OKBapkJbB8c"
+            name: "99% of physics explained in 5 equations"
+      
+      - title: "The Map of Something"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=OmJ-4B-mS-Y"
+            name: "The Map of Mathematics"
+      
+      - title: "Explicit Usage of Someone Else's Style"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=up21mvokyQ4"
+            name: "The Map of Mathematics"
+      
+      - title: "Where Did Something Come From?"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=HSbYUEaAwLI"
+            name: "Where Did Cringey Corporate Jargon Come From? | Otherwords"
+      
+      - title: "Something Is Wrong With Something That We're Used To"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=dLt4cK0Kijo"
+            name: "What’s wrong with American aviation?"
+      
+      - title: "The Only Thing / The Exact Thing You Need"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=2aGe20OuUAU"
+            name: "The Exact Math Books I read to go from Beginner to Pro (in under 4 years)"
+          - url: "https://www.youtube.com/watch?v=DQdB7wFEygo"
+            name: "The Only Docker Tutorial You Need To Get Started"
+      
+      - title: "Tabular Data Into Video Format"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=-nrqGFMWI14"
+            name: "All Nobel laureates in Physics in History (1901–2025)"
+
+  - name: "Something Outstanding"
+    patterns:
+      - title: "Most Important / The Weirdest / The Something-est"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=SmZmBKc7Lrs"
+            name: "The Most Important Algorithm in Machine Learning"
+          - url: "https://www.youtube.com/watch?v=J4GNW3lCGmI"
+            name: "13 Languages with HARDEST Pronunciation"
+      
+      - title: "How Somebody Does Something Outstanding"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=Pi5taR18uZ8"
+            name: "How U.S. Military Linguists Learn Languages Fast"
+      
+      - title: "Something That We're Used To Has Weird Traits"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=6fnmXX8RK0s"
+            name: "5 weird data structures every programmer should know"
+      
+      - title: "Bingo"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=zYmkOInF6Us"
+            name: "5 weird data structures every programmer should know"
+      
+      - title: "It Changed Everything"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=0-MA3jgYMMg"
+            name: "Google’s AlphaEvolve changes everything"
+
+  - name: "Telling a Story About Something"
+    patterns:
+      - title: "A Day at the..."
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=iQBFhvr9cTQ"
+            name: "A Day at the 'Anti-Woke' University Funded by Billionaire Trump Backers | WSJ"
+      
+      - title: "Getting Deeper Into Something That We're Used To"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=GhFgnkLPZj4"
+            name: "What I *actually* do as a Data Scientist (salary, job, reality)"
+
+  - name: "History"
+    patterns:
+      - title: "Every Day/Year of Something (Evolution)"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=0B-ddXKAWGU"
+            name: "Europe's Largest Cities Throughout History: Every Year"
+      
+      - title: "The Entire History of Something"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=OdJXbxA79qI"
+            name: "The Entire History of Math | the Road to Ancient Rome"
+
+  - name: "Street Interviews"
+    patterns:
+      - title: "100 People"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=AlYzGYmsFK0"
+            name: "What do you hate the most? 100 Russians."
+      
+      - title: "Personal Interview"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=NUbpDoQwHLo"
+            name: "This Russian lady didn't hold back when asked about the war"
+      
+      - title: "Compilation of Interviews"
+        description: null
+        examples: []
+      
+      - title: "Exploring Cultures"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=pkaz6cfRYKk"
+            name: "I Asked Korean Guys “Do You Live Alone?"
+
+  - name: "Ratings"
+    patterns:
+      - title: "Top N of the Best"
+        description: null
+        examples: []
+      
+      - title: "Tier Lists"
+        description: null
+        examples: []
+
+  - name: "Languages"
+    patterns:
+      - title: "Understanding Each Other"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=kCt9ciHrVjk"
+            name: "Hungary, Estonia, Finland l Can Uralic Language Speakers Understand Each other?"
+
+  - name: "Reimagined by AI"
+    patterns:
+      - title: "AI Reimagining"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=zS5BfBW9glg"
+            name: "GTA 5 but it's in BRAZIL (Gameplay Reimagined by AI)"
+
+  - name: "Anything Else"
+    patterns:
+      - title: "I Did It For You So You Don't Have To"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=pA3Of81vdNY"
+            name: "I Paid for Valorant Coaching so You don't Have To"
+          - url: "https://www.youtube.com/watch?v=XYbS7BSnTtc"
+            name: "We played Among Us 3D so you don't have to"
+
+  - name: "Live Streams"
+    patterns:
+      - title: "Watching Videos"
+        description: null
+        examples: []
+      
+      - title: "Debates"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=0vN-kujI4io"
+            name: "DEBATE: Panchin vs. Savvateev: Creationism or Evolution?"
+            comment: "This video is in Russian"
+
+  - name: "Recommendations"
+    patterns:
+      - title: "N of Something For Someone"
+        description: null
+        examples:
+          - url: "https://www.youtube.com/watch?v=5RwlFfTF3T0"
+            name: "7 Philosophy Books for Beginners"
