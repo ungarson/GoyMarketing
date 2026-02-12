@@ -1,17 +1,20 @@
 "use client";
 
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 import data from "../../data/database.json";
 
 type ExampleUrl = string;
 
 type Subtype = {
   type: string;
-  examples: ExampleUrl[];
+  warning?: string;
+  examples?: ExampleUrl[];
 };
 
 type Topic = {
   type: string;
+  warning?: string;
+  examples?: ExampleUrl[];
   subtypes?: Subtype[];
 };
 
@@ -33,69 +36,62 @@ function formatEmphasis(text: string): React.ReactNode {
   });
 }
 
-// Lightweight video preview card using noembed to fetch title + thumbnail
-const VideoPreview: React.FC<{ url: string }> = ({ url }) => {
-  const [title, setTitle] = useState<string | null>(null);
-  const [thumb, setThumb] = useState<string | null>(null);
-  const [failed, setFailed] = useState<boolean>(false);
 
-  useEffect(() => {
-    let cancelled = false;
-    const endpoint = `https://noembed.com/embed?url=${encodeURIComponent(url)}`;
-    fetch(endpoint)
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((json) => {
-        if (cancelled) return;
-        setTitle((json.title as string) || url);
-        setThumb((json.thumbnail_url as string) || null);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setFailed(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [url]);
+// Detect whether the whole string is a single URL (no additional text)
+function isSingleUrl(text: string): boolean {
+  const trimmed = text.trim();
+  try {
+    const u = new URL(trimmed);
+    // Ensure original is exactly the URL without surrounding words
+    return trimmed === u.href || trimmed === `${u.protocol}//${u.host}${u.pathname}${u.search}${u.hash}`;
+  } catch {
+    return false;
+  }
+}
 
-  // Compact horizontal card with 100x100 square thumbnail and text on the right
-  if (failed) {
+// Component to auto-link any URLs inside arbitrary text
+const AutoLinkText: React.FC<{ text: string }> = ({ text }) => {
+  // Basic URL regex (http/https) that avoids swallowing trailing punctuation
+  const urlRegex = /(https?:\/\/[\w\-._~:/?#\[\]@!$&'()*+,;=%]+)(?![\w\-._~:/?#\[\]@!$&'()*+,;=%])/gi;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = urlRegex.exec(text)) !== null) {
+    const [url] = match;
+    const start = match.index;
+    if (start > lastIndex) parts.push(text.slice(lastIndex, start));
+    parts.push(
+      <a key={start} href={url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline-offset-2 hover:underline dark:text-blue-400">
+        {url}
+      </a>
+    );
+    lastIndex = start + url.length;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return <>{parts}</>;
+};
+
+// Render a simple link for pure URLs, or a text block with auto-linked URLs for mixed text
+const ExampleItem: React.FC<{ value: string }> = ({ value }) => {
+  if (isSingleUrl(value)) {
+    const url = value.trim();
     return (
-      <a href={url} target="_blank" rel="noopener noreferrer" className="block w-full">
-        <div className="flex w-full items-center gap-3 rounded-md border border-zinc-200 bg-white p-2 transition hover:shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
-          <div className="flex h-[100px] w-[100px] flex-none items-center justify-center rounded bg-zinc-100 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-            No preview
-          </div>
-          <div className="min-w-0">
-            <div className="line-clamp-2 text-sm font-medium text-blue-600 underline-offset-2 hover:underline dark:text-blue-400">
-              {url}
-            </div>
-          </div>
-        </div>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-3 block break-words text-blue-600 underline-offset-2 hover:underline dark:text-blue-400"
+      >
+        {url}
       </a>
     );
   }
-
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className="block mt-3">
-      <div className="flex items-center gap-3 rounded-md border border-zinc-200 bg-white p-2 transition hover:shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
-        {thumb ? (
-          <img src={thumb} alt={title ?? url} className="h-[100px] w-[100px] flex-none rounded object-cover" loading="lazy" />
-        ) : (
-          <div className="flex h-[100px] w-[100px] flex-none items-center justify-center rounded bg-zinc-100 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-            Loading preview…
-          </div>
-        )}
-        <div className="min-w-0">
-          <div className="line-clamp-2 text-sm font-medium text-zinc-900 dark:text-zinc-100">
-            {title ?? url}
-          </div>
-          <div className="mt-1 text-xs text-blue-600 underline-offset-2 hover:underline dark:text-blue-400">
-            {(() => { try { return new URL(url).hostname; } catch { return url; } })()}
-          </div>
-        </div>
-      </div>
-    </a>
+    <div className="mt-3 rounded-md border border-zinc-200 bg-white p-3 dark:border-zinc-700 dark:bg-zinc-900">
+      <p className="text-sm text-zinc-800 dark:text-zinc-200">
+        <AutoLinkText text={value} />
+      </p>
+    </div>
   );
 };
 
@@ -137,11 +133,11 @@ export default function TopicsPage() {
       <main className="w-full max-w-4xl rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 p-5 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/80">
           <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Marketing Tricks</h1>
-          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-            Classification of common marketing tricks and patterns observed online. <br /> Created by Daniil Orain, managed by the <a href={"https://github.com/ungarson/GoyMarketing"} className={"text-blue-300"} target={"_blank"}>community</a>.
-          </p>
           <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-            Disclaimer: These examples are provided for educational purposes only, to help people (ESPECIALLY GOYIM) recognize persuasive tactics and avoid being misled. Watch closely, you are being tricked every fucking day.
+            <strong>IMPORTANT DISCLAIMER, PLEASE READ THIS SHIT:</strong> These examples are provided for educational purposes only, to help people (ESPECIALLY GOYIM) recognize persuasive tactics and avoid being misled. Watch closely, you are being tricked every fucking day by sociopaths.
+          </p>
+          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+            Created by Daniil Orain, managed by the <a href={"https://github.com/ungarson/GoyMarketing"} className={"text-blue-300"} target={"_blank"}>community</a>.
           </p>
         </header>
         {/* Scrollable content box */}
@@ -173,8 +169,25 @@ export default function TopicsPage() {
 
                   {isOpen && (
                     <div className="border-t border-zinc-200 px-4 py-3 dark:border-zinc-800">
+                      {topic.warning && (
+                        <div className="mb-3 rounded-md border border-amber-300 bg-amber-50 p-3 text-amber-900 dark:border-amber-600 dark:bg-amber-900/30 dark:text-amber-200">
+                          <strong className="mr-1">Warning:</strong>
+                          <span><AutoLinkText text={topic.warning} /></span>
+                        </div>
+                      )}
+
+                      {topic.examples && topic.examples.length > 0 && (
+                        <div className="mt-2 grid grid-cols-1">
+                          {topic.examples.map((value, i) => (
+                            <ExampleItem key={`t-${tIdx}-ex-${i}`} value={value} />
+                          ))}
+                        </div>
+                      )}
+
                       {subs.length === 0 ? (
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400">No subtypes</p>
+                        !topic.examples || topic.examples.length === 0 ? (
+                          <p className="text-sm text-zinc-600 dark:text-zinc-400">No subtypes</p>
+                        ) : null
                       ) : (
                         <ul className="mt-2 space-y-2">
                           {subs.map((sub, sIdx) => {
@@ -183,35 +196,57 @@ export default function TopicsPage() {
                             return (
                               <li key={key}>
                                 <div className="rounded-md border border-zinc-200 bg-zinc-50/60 p-3 dark:border-zinc-700 dark:bg-zinc-800/60">
-                                  <button
-                                    type="button"
-                                    aria-expanded={subOpen}
-                                    onClick={() => toggleSubtype(tIdx, sIdx)}
-                                    className="flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-left hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:hover:bg-zinc-800/60"
-                                  >
-                                    <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                      {formatEmphasis(sub.type)}
-                                    </span>
-                                    <span
-                                      className={`select-none text-xs text-zinc-500 transition-transform dark:text-zinc-400 ${subOpen ? "rotate-90" : ""}`}
-                                      aria-hidden
-                                    >
-                                      ▶
-                                    </span>
-                                  </button>
-                                  {subOpen && (
-                                    <div className="px-3 pb-2">
-                                      {sub.examples && sub.examples.length > 0 ? (
-                                        <div className="grid grid-cols-1">
-                                          {sub.examples.map((url, i) => (
-                                            <VideoPreview key={i} url={url} />
-                                          ))}
+                                  {(() => {
+                                    const hasExamples = Array.isArray(sub.examples) && sub.examples.length > 0;
+                                    const hasWarning = !!sub.warning;
+                                    const hasContent = hasExamples || hasWarning;
+                                    if (!hasContent) {
+                                      return (
+                                        <div className="flex w-full items-center justify-between gap-3 rounded-md px-3 py-2">
+                                          <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                                            {formatEmphasis(sub.type)}
+                                          </span>
                                         </div>
-                                      ) : (
-                                        <p className="text-sm text-zinc-600 dark:text-zinc-400">No examples</p>
-                                      )}
-                                    </div>
-                                  )}
+                                      );
+                                    }
+                                    return (
+                                      <>
+                                        <button
+                                          type="button"
+                                          aria-expanded={subOpen}
+                                          onClick={() => toggleSubtype(tIdx, sIdx)}
+                                          className="flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-left hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:hover:bg-zinc-800/60"
+                                        >
+                                          <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                                            {formatEmphasis(sub.type)}
+                                          </span>
+                                          <span
+                                            className={`select-none text-xs text-zinc-500 transition-transform dark:text-zinc-400 ${subOpen ? "rotate-90" : ""}`}
+                                            aria-hidden
+                                          >
+                                            ▶
+                                          </span>
+                                        </button>
+                                        {subOpen && (
+                                          <div className="px-3 pb-2">
+                                            {sub.warning && (
+                                              <div className="mb-2 rounded-md border border-amber-300 bg-amber-50 p-2 text-amber-900 dark:border-amber-600 dark:bg-amber-900/30 dark:text-amber-200">
+                                                <strong className="mr-1">Warning:</strong>
+                                                <span><AutoLinkText text={sub.warning} /></span>
+                                              </div>
+                                            )}
+                                            {hasExamples && (
+                                              <div className="grid grid-cols-1">
+                                                {sub.examples!.map((value, i) => (
+                                                  <ExampleItem key={i} value={value} />
+                                                ))}
+                                              </div>
+                                            )}
+                                          </div>
+                                        )}
+                                      </>
+                                    );
+                                  })()}
                                 </div>
                               </li>
                             );

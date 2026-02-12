@@ -1,297 +1,62 @@
 {
   "0": {
-    "type": "Something outstanding",
+    "type": "Just lie",
     "subtypes": [
       {
-        "type": "Most important / the weirdest / the *something*-est",
+        "type": "Use a popular news topic to create a false story",
         "examples": [
-          "https://www.youtube.com/watch?v=SmZmBKc7Lrs",
-          "https://www.youtube.com/watch?v=J4GNW3lCGmI",
-          "https://www.youtube.com/watch?v=d7wnAw7ufG4"
+          "Saw your name in the Epstein files: https://x.com/sammarelich/status/2021341379839000663",
+          "This guy probably lied. I can't verify if people actually told him that he was in the Epstein's island. Good usage of the popular topic. https://www.youtube.com/post/UgkxYGbBNKKjVczzAdw364_PRmDBBxwGEfKP"
         ]
       },
       {
-        "type": "How somebody does or become *something or someone* outstanding",
+        "type": "Lie using money. People love money.",
         "examples": [
-          "https://www.youtube.com/watch?v=Pi5taR18uZ8",
-          "https://www.youtube.com/watch?v=CVpfPETFPhE"
+          "«A wealthy woman paid 3.7 million to sit next to Turkish actor Burak for just 15 minutes» — she did not pay this money, lol: https://x.com/GPX_Press/status/2021300173154980060"
         ]
       },
       {
-        "type": "Something that we’re used to have some weird traits/attributes/*something*",
+        "type": "Lie that you got into a trouble",
         "examples": [
-          "https://www.youtube.com/watch?v=6fnmXX8RK0s"
-        ]
-      },
-      {
-        "type": "Bingo",
-        "examples": [
-          "https://www.youtube.com/watch?v=zYmkOInF6Us"
-        ]
-      },
-      {
-        "type": "It changed everything",
-        "examples": [
-          "https://www.youtube.com/watch?v=0-MA3jgYMMg"
-        ]
-      },
-      {
-        "type": "*Something* went wrong",
-        "examples": [
-          "https://www.youtube.com/watch?v=9KC3VSDZPIc"
-        ]
-      },
-      {
-        "type": "Never-before-seen *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=CEQam0pVLx8"
-        ]
-      },
-      {
-        "type": "Do something common but have a plot twist",
-        "examples": [
-          "https://www.youtube.com/watch?v=KWQ8aWkBYjE"
+          "Example: lie that you had a fight with someone and now you’re in a hospital. Works best if you combine it with going through the character development — your lies will be forgiven."
         ]
       }
     ]
   },
   "1": {
-    "type": "Telling a story about something",
-    "subtypes": [
-      {
-        "type": "A day at *some place*",
-        "examples": [
-          "https://www.youtube.com/watch?v=iQBFhvr9cTQ"
-        ]
-      },
-      {
-        "type": "Getting deeper into *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=GhFgnkLPZj4"
-        ]
-      },
-      {
-        "type": "What exactly is *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=lsycTcjJz0M"
-        ]
-      },
-      {
-        "type": "It took me *some time* to realize *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=xz-ymFOhBAE",
-          "https://www.youtube.com/watch?v=hQTL0ph-usE"
-        ]
-      },
-      {
-        "type": "It makes me *this amount* of money",
-        "examples": [
-          "https://www.youtube.com/watch?v=9vS5kvxbPMQ"
-        ]
-      }
+    "type": "Do something illegal",
+    "warning": "marketing results will outperform the costs (fines) if media posts about you. After getting attention from the media, publicly apologize. Do not do anything violent. ",
+    "examples": [
+      "Example: In Russia, YouTube is blocked, although some internet providers had  made it available for the users. It was clear that the government will reach the providers, and YouTube will be unavailable soon. The marketing results have likely covered the fines that they had to pay. Link: https://t.me/forbesglobalrus/6616"
     ]
   },
   "2": {
-    "type": "History",
-    "subtypes": [
-      {
-        "type": "Every day/year of *something* (evolution)",
-        "examples": [
-          "https://www.youtube.com/watch?v=0B-ddXKAWGU"
-        ]
-      },
-      {
-        "type": "The entire history of *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=OdJXbxA79qI"
-        ]
-      }
+    "type": "Buy fake posts",
+    "examples": [
+      "Example: buy promotions on X where people would tell you how your videos/product is great and has such small amount of views/sales: https://x.com/AlexeiScales/status/2018502733184078245"
     ]
   },
   "3": {
-    "type": "Street Interviews",
-    "subtypes": [
-      {
-        "type": "100 people",
-        "examples": [
-          "https://www.youtube.com/watch?v=JnDpjzzRwTs"
-        ]
-      },
-      {
-        "type": "Personal interview",
-        "examples": [
-          "https://www.youtube.com/watch?v=h_LMdoCuSRM"
-        ]
-      },
-      {
-        "type": "Exploring cultures",
-        "examples": [
-          "https://www.youtube.com/watch?v=pkaz6cfRYKk"
-        ]
-      }
+    "type": "Make a staged content",
+    "examples": [
+      "Make a staged video: https://x.com/gen_z4961/status/2018660769387401356"
     ]
   },
   "5": {
-    "type": "Ratings",
+    "type": "Go through character development",
     "subtypes": [
       {
-        "type": "Top *n* of the best",
-        "examples": [
-          "https://www.youtube.com/watch?v=fYy-hjql1j4"
-        ]
-      },
-      {
-        "type": "Tier list",
-        "examples": [
-          "https://www.youtube.com/watch?v=g2NwiQ-vIu0",
-          "https://www.youtube.com/watch?v=XGSptykSrqg"
-        ]
-      }
-    ]
-  },
-  "6": {
-    "type": "Languages",
-    "subtypes": [
-      {
-        "type": "Understanding each other",
-        "examples": [
-          "https://www.youtube.com/watch?v=kCt9ciHrVjk"
-        ]
+        "type": "Example: be a bad person for some time, get engagement, then publicly ask for forgiveness. People will forgive you."
       }
     ]
   },
   "7": {
-    "type": "AI",
+    "type": "Appeal to men as a women",
     "subtypes": [
       {
-        "type": "Reimagined by AI",
+        "type": "Play on the vulnerable parts of men",
         "examples": [
-          "https://www.youtube.com/watch?v=TGR4XSvCOB8"
-        ]
-      }
-    ]
-  },
-  "8": {
-    "type": "Explanations of topics",
-    "subtypes": [
-      {
-        "type": "Iceberg Explained",
-        "examples": [
-          "https://www.youtube.com/watch?v=pEfrdAtAmqk"
-        ]
-      },
-      {
-        "type": "If *something* were like something else",
-        "examples": [
-          "https://www.youtube.com/watch?v=G025oxyWv0E"
-        ]
-      },
-      {
-        "type": "Levels of *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=I0vDXO5FeaI"
-        ]
-      },
-      {
-        "type": "Explained visually or *Visualized*",
-        "examples": [
-          "https://www.youtube.com/watch?v=eiC58R16hb8"
-        ]
-      },
-      {
-        "type": "Every type explained *in n minutes*",
-        "examples": [
-          "https://www.youtube.com/watch?v=FOcmIPA4zwc",
-          "https://www.youtube.com/watch?v=9t2TQ8-mf5w"
-        ]
-      },
-      {
-        "type": "Every type explained *in n of something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=OKBapkJbB8c"
-        ]
-      },
-      {
-        "type": "The Map of *something*",
-        "examples": [
-          "https://www.youtube.com/watch?v=OmJ-4B-mS-Y"
-        ]
-      },
-      {
-        "type": "Explicit usage of someone else’s style",
-        "examples": [
-          "https://www.youtube.com/watch?v=up21mvokyQ4"
-        ]
-      },
-      {
-        "type": "Where did *something* come from?",
-        "examples": [
-          "https://www.youtube.com/watch?v=HSbYUEaAwLI"
-        ]
-      },
-      {
-        "type": "Something is wrong with something that we’re used to",
-        "examples": [
-          "https://www.youtube.com/watch?v=dLt4cK0Kijo"
-        ]
-      },
-      {
-        "type": "The only thing / the exact thing you need",
-        "examples": [
-          "https://www.youtube.com/watch?v=2aGe20OuUAU",
-          "https://www.youtube.com/watch?v=DQdB7wFEygo"
-        ]
-      },
-      {
-        "type": "Tabular data — into video format",
-        "examples": [
-          "https://www.youtube.com/watch?v=-nrqGFMWI14"
-        ]
-      }
-    ]
-  },
-  "9": {
-    "type": "Live Streams",
-    "subtypes": [
-      {
-        "type": "Ambiences: Rain, Fireplace, City life, etc.",
-        "examples": [
-          "https://www.youtube.com/watch?v=Gfsvr3yaVuM"
-        ]
-      }
-    ]
-  },
-  "10": {
-    "type": "Recommendations",
-    "subtypes": [
-      {
-        "type": "*n of something* for someone",
-        "examples": [
-          "https://www.youtube.com/watch?v=5RwlFfTF3T0"
-        ]
-      }
-    ]
-  },
-  "11": {
-    "type": "Travelling",
-    "subtypes": [
-      {
-        "type": "Solo in *somewhere*",
-        "examples": [
-          "https://www.youtube.com/watch?v=Dd4cDuZklGE",
-          "https://www.youtube.com/watch?v=m30Radm6n-0"
-        ]
-      }
-    ]
-  },
-  "12": {
-    "type": "Anything else",
-    "subtypes": [
-      {
-        "type": "I did it for you so you don’t have to",
-        "examples": [
-          "https://www.youtube.com/watch?v=pA3Of81vdNY",
-          "https://www.youtube.com/watch?v=XYbS7BSnTtc"
+          "https://x.com/evaedxn_/status/2021296029895954829"
         ]
       }
     ]

@@ -1,26 +1,26 @@
 import type { NextConfig } from "next";
 
 // NOTE:
-// Host-conditional rewrites for the titles subdomain of blowup.digital
+// Host-conditional rewrites for the tricks subdomain of blowup.digital
 // These rewrites map:
-//  - titles.blowup.digital/        → /titles
-//  - titles.blowup.digital/:path*  → /titles/:path*
+//  - tricks.blowup.digital/        → /tricks
+//  - tricks.blowup.digital/:path*  → /tricks/:path*
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
         source: "/",
         has: [
-          { type: "host", value: "titles.blowup.digital" },
+          { type: "host", value: "tricks.blowup.digital" },
         ],
-        destination: "/titles",
+        destination: "/tricks",
       },
       {
         source: "/:path*",
         has: [
-          { type: "host", value: "titles.blowup.digital" },
+          { type: "host", value: "tricks.blowup.digital" },
         ],
-        destination: "/titles/:path*",
+        destination: "/tricks/:path*",
       },
     ];
   },
