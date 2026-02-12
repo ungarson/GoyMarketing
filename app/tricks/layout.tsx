@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "YouTube Titles",
-  description: "Classification of YouTube videos titles that showed prominence",
+  title: "Marketing Tricks",
+  description: "Classification of common marketing tricks and patterns for educational awareness",
   authors: [{ name: "Daniil Orain" }],
 };
 

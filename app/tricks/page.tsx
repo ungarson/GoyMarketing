@@ -100,7 +100,7 @@ const VideoPreview: React.FC<{ url: string }> = ({ url }) => {
 };
 
 export default function TopicsPage() {
-  // Prepare a stable, sorted array of titles
+  // Prepare a stable, sorted array of tricks
   const topics = useMemo(() => {
     return Object.entries(topicsData)
       .sort(([a], [b]) => Number(a) - Number(b))
@@ -136,9 +136,12 @@ export default function TopicsPage() {
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 p-6 dark:bg-black">
       <main className="w-full max-w-4xl rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 p-5 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/80">
-          <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">YouTube Video Titles</h1>
+          <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Marketing Tricks</h1>
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-            Classification of YouTube videos titles that showed prominence. <br /> Created by Daniil Orain, managed by the <a href={"https://github.com/ungarson/TypesOfYouTubeVideoTitles"} className={"text-blue-300"} target={"_blank"}>community</a>.
+            Classification of common marketing tricks and patterns observed online. <br /> Created by Daniil Orain, managed by the <a href={"https://github.com/ungarson/GoyMarketing"} className={"text-blue-300"} target={"_blank"}>community</a>.
+          </p>
+          <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+            Disclaimer: These examples are provided for educational purposes only, to help people (ESPECIALLY GOYIM) recognize persuasive tactics and avoid being misled. Watch closely, you are being tricked every fucking day.
           </p>
         </header>
         {/* Scrollable content box */}
