@@ -134,10 +134,10 @@ export default function TopicsPage() {
         <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 p-5 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/80">
           <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Marketing Tricks</h1>
           <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-            <strong>IMPORTANT DISCLAIMER, PLEASE READ THIS SHIT:</strong> These examples are provided for educational purposes only, to help people (ESPECIALLY GOYIM) recognize persuasive tactics and avoid being misled. Watch closely, you are being tricked every fucking day by sociopaths.
+            These examples are provided for educational purposes only, to help people recognize persuasive tactics and avoid being misled. Watch closely, you are being tricked every fucking day by sociopaths.
           </p>
-          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-            Created by Daniil Orain, managed by the <a href={"https://github.com/ungarson/GoyMarketing"} className={"text-blue-300"} target={"_blank"}>community</a>.
+          <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+            Created by Daniil Orain, managed by the <a href={"https://github.com/ungarson/MamontMarketing"} className={"text-blue-300"} target={"_blank"}>community</a>.
           </p>
         </header>
         {/* Scrollable content box */}

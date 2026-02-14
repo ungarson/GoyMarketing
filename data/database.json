@@ -20,6 +20,12 @@
         "examples": [
           "Example: lie that you had a fight with someone and now you’re in a hospital. Works best if you combine it with going through the character development — your lies will be forgiven."
         ]
+      },
+      {
+        "type": "Lie that you (or someone else) has been arrested",
+        "examples": [
+          "https://x.com/KantInEastt/status/2022550804490838500"
+        ]
       }
     ]
   },
@@ -33,7 +39,8 @@
   "2": {
     "type": "Buy fake posts",
     "examples": [
-      "Example: buy promotions on X where people would tell you how your videos/product is great and has such small amount of views/sales: https://x.com/AlexeiScales/status/2018502733184078245"
+      "Example: buy posts where people would tell you how your videos/product is great and has such small amount of views/sales: https://x.com/AlexeiScales/status/2018502733184078245 and https://x.com/kimjendu/status/2021769004545880421",
+      "Example: buy posts where people would tell you that you have disappeared (left the game): https://x.com/iyoushetwt/status/2022352749879529835"
     ]
   },
   "3": {
@@ -56,9 +63,22 @@
       {
         "type": "Play on the vulnerable parts of men",
         "examples": [
-          "https://x.com/evaedxn_/status/2021296029895954829"
+          "https://x.com/evaedxn_/status/2021296029895954829",
+          "https://x.com/Vicky/status/2022032779832438872"
         ]
       }
+    ]
+  },
+  "8": {
+    "type": "Make a vague post",
+    "examples": [
+      "Example (it's worth checking the memes in the thread 😄): https://x.com/elsdawg/status/2022278524875264112"
+    ]
+  },
+  "9": {
+    "type": "Steal",
+    "examples": [
+      "Steal other people's posts (I saw this one from the few authors within a few days): https://x.com/haha_girrrl/status/2022316253038448927"
     ]
   }
 }
